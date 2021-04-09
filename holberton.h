@@ -18,8 +18,23 @@ char **read_line(char *line);
 /*function that exexute line in the read_line*/
 void execute_line(char **tokens);
 
+/*function that link_together command and director*/
+char *_path(char *s);
 
+/**/
+char *_getenv(char *var);
 
+/**/
+char *directories(char *value, char *c);
+
+/**/
+int _strlen(char *s);
+
+/**/
+char *_strcat(char *s1, char *s2);
+
+/**/
+int _strcmp(char *s1, char *s2);
 
 
 #endif /**_HOLBERTON_H_*/

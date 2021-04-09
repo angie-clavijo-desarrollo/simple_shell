@@ -21,7 +21,16 @@ int main(void)
 			return (0);
 		tokens = read_line(line);
 		if (tokens[0] != NULL)
-			execute_line(tokens);
+		{
+			if (access(tokens[0], F_OK) == 0)
+				execute_line(tokens);
+			else
+			{
+				tokens[0] = _path(tokens[0]);
+				printf("%s\n", tokens[0]);
+				execute_line(tokens);
+			}
+		}
 	}
 	return (0);
 }
