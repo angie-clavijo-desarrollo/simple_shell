@@ -19,10 +19,9 @@ int main(void)
 		linesize = getline(&line, &len, stdin);
 		if (linesize == -1)
 			return (0);
-
-		if (line != NULL && *line != '\n')
-			tokens = read_line(line);
-		execute_line(tokens);
+		tokens = read_line(line);
+		if (tokens[0] != NULL)
+			execute_line(tokens);
 	}
 	return (0);
 }
