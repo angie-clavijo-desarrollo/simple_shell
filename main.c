@@ -20,7 +20,8 @@ int main(void)
 		if (linesize == -1)
 			return (0);
 
-		tokens = read_line(line);
+		if (line != NULL && *line != '\n')
+			tokens = read_line(line);
 		execute_line(tokens);
 	}
 	return (0);
