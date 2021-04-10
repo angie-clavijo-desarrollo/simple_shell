@@ -1,7 +1,7 @@
 #include "holberton.h"
 
 /**
-* main - principla function of into
+* main - principal function of into
 *
 * Return: integer
 */
@@ -36,7 +36,6 @@ int main(void)
 			else
 			{
 				tokens[0] = _path(tokens[0]);
-				printf("%s\n", tokens[0]);
 				execute_line(tokens);
 			}
 		}
