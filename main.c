@@ -12,10 +12,19 @@ int main(void)
 	size_t len = 0;
 	char *line = NULL;
 	char **tokens = NULL;
+	int int_mode;
+
+	int_mode = isatty(STDIN_FILENO);
 
 	while (1)
 	{
-		write(1, "$ ", 2);
+
+		if (int_mode == 1)
+		{
+			write(STDOUT_FILENO, "$ ", 3);
+		}
+
+		/*write(1, "$ ", 2);*/
 		linesize = getline(&line, &len, stdin);
 		if (linesize == -1)
 			return (0);
