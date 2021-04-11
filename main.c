@@ -23,14 +23,18 @@ int main(void)
 		{
 			write(STDOUT_FILENO, "$ ", 3);
 		}
-
-		/*write(1, "$ ", 2);*/
 		linesize = getline(&line, &len, stdin);
 		if (linesize == -1)
 			return (0);
 		tokens = read_line(line);
 		if (tokens[0] != NULL)
 		{
+			if (_strcmp(tokens[0], "exit") == 0)
+				exit(0);
+			if (_strcmp(tokens[0], "env") == 0)
+			{
+				printenv();
+			}
 			if (access(tokens[0], F_OK) == 0)
 				execute_line(tokens);
 			else
@@ -39,6 +43,7 @@ int main(void)
 				execute_line(tokens);
 			}
 		}
+		free(tokens);
 	}
 	return (0);
 }

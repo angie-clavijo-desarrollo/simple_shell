@@ -34,7 +34,20 @@ int _strlen(char *s);
 char *_strcat(char *s1, char *s2);
 
 /**/
+char *_strdup(char *src);
+
+/**/
 int _strcmp(char *s1, char *s2);
+
+/**/
+char *_strcpy(char *dest, char *src);
+
+
+/**/
+void printenv(void);
+
+/**/
+int _putchar(char c);
 
 
 #endif /**_HOLBERTON_H_*/

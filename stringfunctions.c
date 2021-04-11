@@ -74,7 +74,7 @@ int _strcmp(char *s1, char *s2)
 	if (l1 == i && l2 == i)
 		return (0);
 
-	return (l1 - l2);
+	return (-1);
 }
 
 /**
@@ -91,9 +91,9 @@ char *_strcat(char *s1, char *s2)
 	int j = 0;
 	int l1 = _strlen(s1);
 	int l2 = _strlen(s2);
-	char *link_together = NULL;
+	char *link_together;
 
-	link_together = malloc((l1 + l2 + 2) * sizeof(char));
+	link_together = (char *)malloc((l1 + l2 + 2) * sizeof(char));
 	if (link_together == NULL)
 		return (NULL);
 	for (i = 0; i <= l1 + l2; i++)
