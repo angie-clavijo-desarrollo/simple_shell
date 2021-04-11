@@ -1,19 +1,33 @@
+<div align="center">
+
 # Simple Shell <img src="https://raw.githubusercontent.com/MartinHeinz/MartinHeinz/master/wave.gif" width="30px">
-<p align= "center">
 
-The Simple Shell is a interpreter of commands line user interface.
-The Thompson shell is the first Unix shell, in the first version of Unix in 1971, and was written by Ken Thompson
+</div>
 
+The **Simple Shell** is a interpreter of commands line user interface<br>
+<br>
+**Unix Shell** is both an interactive command language and scripting language, and is used by the operating system control the execution of the system using **shell scrpts**.<br>
+<br>
+The **Thompson shell** is the first Unix shell, in the first version of Unix in 1971, and was written by **Ken Thompson**  worked at Bell Labs for most of his career where he designed and implemented the original Unix operating system.<br>
+<br>
+Other notable contributions included his work on regular expressions, the definition of the **UTF-8** encoding; he won Turing Award 1983  with his long-term colleague **Dennis Ritchie**.<br>
+<br>
+<div align="center">
+
+![Thompson with Dennis Ritchie.](https://upload.wikimedia.org/wikipedia/commons/1/1b/Ken_Thompson_and_Dennis_Ritchie--1973.jpg)
+<br>
+Thompson with Dennis Ritchie.
+</div>
 <hr>
 
-<p align= "center">
+
 
 ### Description ✒️
 
 This repository show how creating the Shell.
 
 <hr>
-<p align= "center">
+
 
 ### Pre-requirements 📋
 You need have:
@@ -27,7 +41,7 @@ You need have:
 
 <hr>
 
-<p align= "center">
+
 
 ###  Allowed functions and system calls 🔧
 
@@ -110,7 +124,76 @@ $ env
 
 <hr>
 
+### Syscalls importants 💚
+
+<br>
+
+* Get line:  Delimited string input
+```
+#include <stdio.h>
+
+ssize_t getline(char **restrict lineptr, size_t *restrict n, FILE *restrict stream);
+```
+<br>
+
+* Strtok: Extract tokens from strings
+
+```
+#include <string.h>
+
+char *strtok(char *restrict str, const char *restrict delim);
+```
+
+<br>
+
+* Fork: Create a child process, basic process management
+
+```
+#include <unistd.h>
+
+pid_t fork(void);
+```
+
+<br>
+
+* Execve: Execute program
+```
+#include <unistd.h>
+
+int execve(const char *pathname, char *const argv[], char *const envp[]);
+```
+
+<br>
+
+* Isatty: Test whether a file descriptor refers to a terminal
+```
+#include <unistd.h>
+
+int isatty(int fd);
+```
+<br>
+
+* Getpid: Get process identification
+```
+#include <unistd.h>
+
+pid_t getpid(void);
+```
+<br>
+
+* Access: Check user's permissions for a file
+```
+#include <unistd.h>
+
+int access(const char *pathname, int mode);
+```
+
+
+<br>
+<hr>
+
 ### Authors 👷
+<br>
 
 Julieth Gonzalez
 <a href=https://github.com/jyuly12>jyuli12</a>
@@ -121,13 +204,7 @@ Carlos Polania
 Angui Clavijo
 <a href="https://github.com/angie-clavijo-desarrollo">angie-clavijo-desarrollo</a>
 
-
-
-
-
-
-<p align= "center">
-
+<br>
 <hr>
 
 #### Holberton School Colombia 🇨🇴
