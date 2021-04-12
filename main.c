@@ -42,7 +42,10 @@ int main(void)
 			}
 		}
 		if (tokens != NULL)
+		{
+			free(tokens[0]);
 			free(tokens);
+		}
 		if (!line)
 			free(line);
 	}

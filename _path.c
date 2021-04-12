@@ -34,13 +34,13 @@ char *_getenv(char *var)
 	char *token = NULL;
 	char **env = environ;
 	int i = 0;
-	char *tmp = NULL;
+	/*char *tmp = NULL;*/
 	int compare = 1;
 
 	while (env[i] != NULL)
 	{
-		tmp = _strdup(env[i]);
-		token = strtok(tmp, "=");
+		/*tmp = _strdup(env[i]);*/
+		token = strtok(env[i], "=");
 
 		if (*token == *var)
 		{
@@ -48,12 +48,13 @@ char *_getenv(char *var)
 			if (compare == 0)
 			{
 				token = strtok(NULL, "=");
+				/*free(tmp);*/
 				return (token);
 			}
 		}
 
 		i++;
-		free(tmp);
+		/*free(tmp);*/
 	}
 	return (NULL);
 }
