@@ -41,6 +41,7 @@ char *_getenv(char *var)
 	{
 		tmp = _strdup(env[i]);
 		token = strtok(tmp, "=");
+
 		if (*token == *var)
 		{
 			compare = _strcmp(token, var);
@@ -50,19 +51,21 @@ char *_getenv(char *var)
 				return (token);
 			}
 		}
+
 		i++;
+		free(tmp);
 	}
 	return (NULL);
 }
 
 /**
-* directories - function that obtain
-* the concatenate command and the director PATH
-* @value: Value of the PATH in the envrion
-* @c: Commando to concatenate
-*
-* Return: address concatenate
-*/
+ * directories - function that obtain
+ * the concatenate command and the director PATH
+ * @value: Value of the PATH in the envrion
+ * @c: Commando to concatenate
+ *
+ * Return: address concatenate
+ */
 
 char *directories(char *value, char *c)
 {
@@ -78,8 +81,8 @@ char *directories(char *value, char *c)
 		{
 			return (link_together);
 		}
+
 		token = strtok(NULL, ":");
 	}
 	return (NULL);
 }
-

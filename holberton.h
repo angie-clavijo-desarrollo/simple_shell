@@ -49,6 +49,9 @@ void printenv(void);
 /**/
 int _putchar(char c);
 
+/**/
+int pointline(char *s);
+
 
 #endif /**_HOLBERTON_H_*/
 

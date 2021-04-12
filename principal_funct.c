@@ -12,7 +12,7 @@
 char **read_line(char *line)
 {
 	char *token;
-	char **tokens = malloc(_BUFF_SIZE_MAX_ * sizeof(char *));
+	char **tokens = malloc(_BUFF_SIZE_MAX_ * sizeof(char));
 	int position = 0;
 
 	if (line == NULL)
@@ -49,8 +49,8 @@ void execute_line(char **tokens)
 		if (execve(tokens[0], tokens, NULL) == -1)
 		{
 			perror("Error");
+			exit(0);
 		}
-		exit(0);
 	}
 	else
 		wait(NULL);

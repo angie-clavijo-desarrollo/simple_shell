@@ -18,11 +18,8 @@ int main(void)
 
 	while (1)
 	{
-
 		if (int_mode == 1)
-		{
 			write(STDOUT_FILENO, "$ ", 3);
-		}
 		linesize = getline(&line, &len, stdin);
 		if (linesize == -1)
 			return (0);
@@ -30,12 +27,13 @@ int main(void)
 		if (tokens[0] != NULL)
 		{
 			if (_strcmp(tokens[0], "exit") == 0)
+			{	free(line);
+				free(tokens);
 				exit(0);
-			if (_strcmp(tokens[0], "env") == 0)
-			{
-				printenv();
 			}
-			if (access(tokens[0], F_OK) == 0)
+			else if (_strcmp(tokens[0], "env") == 0)
+				printenv();
+			else if (access(tokens[0], F_OK) == 0 && pointline(tokens[0]) == 0)
 				execute_line(tokens);
 			else
 			{
@@ -43,7 +41,10 @@ int main(void)
 				execute_line(tokens);
 			}
 		}
-		free(tokens);
+		if (tokens != NULL)
+			free(tokens);
+		if (!line)
+			free(line);
 	}
 	return (0);
 }
