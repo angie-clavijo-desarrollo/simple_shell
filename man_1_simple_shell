@@ -10,12 +10,13 @@ shell is evaluated in order to replicate it.
 hsh \[en] command language interpreter.
 .SH SYNOPSIS
 .PP
-\f[B]\f[R]
+.B ./hsh
+.PP
+.B [command_1] [command_2] | ./hsh
 .PP
 .SH DESCRIPTION
 .PP
-The simple_shell or ./hsh is a program that interprets the commands given by the
- user.
+The simple_shell or ./hsh is a program that interprets the commands given by the user and it is based on the functionality of the BASH shell (sh)
 .PP
 .SH EXAMPLE
 .PP
