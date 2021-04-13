@@ -1,0 +1,64 @@
+.TH "simple_shell" "1" "12 april 2021" "version 1.0" "hsh man page"
+.hy
+.SH PROLOG
+.PP
+This manual page is part of a collaborative project, where the operation of a
+shell is evaluated in order to replicate it.
+.PP
+.SH NAME
+.PP
+hsh \[en] command language interpreter.
+.SH SYNOPSIS
+.PP
+\f[B]\f[R]
+.PP
+.SH DESCRIPTION
+.PP
+The shell or ./hsh is a program that interprets the commands given by the user.
+.PP
+.SH EXAMPLE
+.PP
+To run the program you have to compile all the .c files contained in the
+repository with the following command:
+.PP
+\f[B]$\f[R] gcc -Wall -Werror -Wextra -pedantic *.c -o hsh
+.PP
+In interactive mode:
+.PP
+\f[B]$\f[R] ./hsh
+.PP
+$ pwd
+.PP
+/home/simple_shell/
+.PP
+$ exit
+.PP
+In non-interactive mode:
+.PP
+\f[B]$\f[R] echo "pwd" | ./hsh
+.PP
+/home/simple_shell/
+.PP
+.SH COMMANDS
+.PP
+Some commands that can be run with hsh:
+.PP
+\f[B]-PATH\f[R] commands.
+.PP
+Locate the required command (ls, pwd, ...) in the PATH file and run it.
+.PP
+\f[B]-env\f[R]
+.PP
+Prints the current environment.
+.PP
+\f[B]-exit\f[R]
+.PP
+End all process.
+.PP
+.SH BUGS
+.PP
+They are not known yet.
+.PP
+.SH AUTHOR
+.PP
+Aguie Clavijo, Julieth Gonzalez and Carlos Polania.
