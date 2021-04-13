@@ -14,11 +14,19 @@ char *_path(char *s)
 	char *link_together = NULL;
 
 	value = _getenv(var);
+
+	if (value == NULL)
+		return (NULL);
+
 	link_together = directories(value, s);
+
 	if (link_together != NULL)
 	{
+		free(value);
 		return (link_together);
 	}
+
+	free(value);
 	return (NULL);
 }
 
@@ -40,6 +48,10 @@ char *_getenv(char *var)
 	while (env[i] != NULL)
 	{
 		tmp = _strdup(env[i]);
+
+		if (tmp == NULL)
+			return (NULL);
+
 		token = strtok(tmp, "=");
 
 		if (*token == *var)
@@ -47,14 +59,17 @@ char *_getenv(char *var)
 			compare = _strcmp(token, var);
 			if (compare == 0)
 			{
-				token = strtok(NULL, "=");
+				token = _strdup(strtok(NULL, "="));
+				free(tmp);
 				return (token);
 			}
 		}
 
 		i++;
+
 		free(tmp);
 	}
+
 	return (NULL);
 }
 
@@ -74,15 +89,22 @@ char *directories(char *value, char *c)
 	char *value2 = value;
 
 	token = strtok(value2, ":");
+
 	while (token != NULL)
 	{
 		link_together = _strcat(token, c);
-		if (link_together != NULL)
+
+		if (link_together == NULL)
+			return (NULL);
+
+		if (access(link_together, F_OK) == 0)
 		{
 			return (link_together);
 		}
 
 		token = strtok(NULL, ":");
+		free(link_together);
 	}
+
 	return (NULL);
 }

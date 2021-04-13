@@ -31,12 +31,18 @@ char *_strdup(char *src)
 	int i = 0;
 	char *dest;
 
+	if (src == NULL)
+		return (NULL);
+
 	length = _strlen(src);
 
 	if (length == 0)
 		return (NULL);
 
 	dest = malloc((length + 1) * sizeof(char));
+
+	if (dest == NULL)
+		return (NULL);
 
 	while (*(src + i) != '\0')
 	{
@@ -68,6 +74,9 @@ int _strcmp(char *s1, char *s2)
 	l1 = _strlen(s1);
 	l2 = _strlen(s2);
 
+	if (l1 == 0 || l2 == 0)
+		return (-1);
+
 	while (*(s1 + i) == *(s2 + i))
 		i++;
 	i--;
@@ -94,9 +103,14 @@ char *_strcat(char *s1, char *s2)
 	int l2 = _strlen(s2);
 	char *link_together = NULL;
 
+	if (s1 == NULL || s2 == NULL)
+		return (NULL);
+
 	link_together = (char *)malloc((l1 + l2 + 2) * sizeof(char));
+
 	if (link_together == NULL)
 		return (NULL);
+
 	for (i = 0; i <= l1 + l2; i++)
 	{
 		if (i < l1)
@@ -116,20 +130,13 @@ char *_strcat(char *s1, char *s2)
 
 	link_together[i] = '\0';
 
-	if (access(link_together, F_OK) == 0)
-	{
-		return (link_together);
-	}
-
-	free(link_together);
-	return (NULL);
+	return (link_together);
 }
 
 /**
 * _strcpy - Function that copy two strings
 * @dest: string to destination
 * @src: string to copy
-*
 * Return: pointer to destination string dest
 */
 
@@ -138,7 +145,13 @@ char *_strcpy(char *dest, char *src)
 	int length = 0;
 	int i;
 
+	if (dest == NULL || src == NULL)
+		return (NULL);
+
 	length = _strlen(src);
+
+	if (length == 0)
+		return (NULL);
 
 	for (i = 0; i <= length; i++)
 		dest[i] = src[i];

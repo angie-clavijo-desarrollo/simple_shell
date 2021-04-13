@@ -15,7 +15,6 @@ int main(void)
 	int int_mode;
 
 	int_mode = isatty(STDIN_FILENO);
-
 	while (1)
 	{
 		if (int_mode == 1)
@@ -39,15 +38,14 @@ int main(void)
 			{
 				tokens[0] = _path(tokens[0]);
 				execute_line(tokens);
+				if (tokens[0] != NULL)
+					free(tokens[0]);
 			}
-		}
-		if (tokens != NULL)
-		{
-			free(tokens[0]);
-			free(tokens);
 		}
 		if (!line)
 			free(line);
+		if (tokens != NULL)
+			free(tokens);
 	}
 	return (0);
 }
