@@ -14,44 +14,55 @@ hsh \[en] command language interpreter.
 .PP
 .SH DESCRIPTION
 .PP
-The shell or ./hsh is a program that interprets the commands given by the user.
+The simple_shell or ./hsh is a program that interprets the commands given by the
+ user.
 .PP
 .SH EXAMPLE
 .PP
 To run the program you have to compile all the .c files contained in the
 repository with the following command:
 .PP
-\f[B]$\f[R] gcc -Wall -Werror -Wextra -pedantic *.c -o hsh
+.ft BI
+$ gcc -Wall -Werror -Wextra -pedantic *.c -o hsh
 .PP
 In interactive mode:
 .PP
-\f[B]$\f[R] ./hsh
+.ft BI
+$ ./hsh
 .PP
+.ft BI
 $ pwd
 .PP
+.ft BI
 /home/simple_shell/
 .PP
+.ft BI
 $ exit
 .PP
 In non-interactive mode:
 .PP
-\f[B]$\f[R] echo "pwd" | ./hsh
+.ft BI
+$ echo "pwd" | ./hsh
 .PP
+.ft BI
 /home/simple_shell/
 .PP
 .SH COMMANDS
 .PP
 Some commands that can be run with hsh:
 .PP
-\f[B]-PATH\f[R] commands.
+.ft BI
+PATH commands.
 .PP
 Locate the required command (ls, pwd, ...) in the PATH file and run it.
 .PP
-\f[B]-env\f[R]
+.ft BI
+env
 .PP
 Prints the current environment.
 .PP
-\f[B]-exit\f[R]
+.ft BI
+exit
 .PP
 End all process.
 .PP
