@@ -8,6 +8,10 @@
 #include <sys/types.h>
 #include <string.h>
 #include <stdlib.h>
+#define _BUFF_SIZE_MAX_ 1064
+#define _LIMITS_ " \t\n"
+
+
 
 extern char **environ;
 
@@ -53,7 +57,13 @@ int _putchar(char c);
 int pointline(char *s);
 
 /**/
-void _printerror(char *s);
+void _printerror(char *s, int i, char *line);
+
+/**/
+void print_integer(int i);
+
+/**/
+int _putchar2(char c);
 
 
 #endif /**_HOLBERTON_H_*/

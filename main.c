@@ -21,6 +21,7 @@ int main(int ac, char **av)
 		if (int_mode == 1)
 			write(STDOUT_FILENO, "$ ", 3);
 		linesize = getline(&line, &len, stdin);
+		i++;
 		if (linesize == -1)
 			exit(98);
 		tokens = read_line(line);
@@ -44,12 +45,11 @@ int main(int ac, char **av)
 					free(tokens[0]);
 				}
 				else if (ac == 1)
-					_printerror(av[1]);
+					_printerror(av[0], i, line);
 			}
 		}
 		if (tokens != NULL)
 			free(tokens);
-		i++;
 	}
 	return (0);
 }

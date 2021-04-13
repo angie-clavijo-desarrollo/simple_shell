@@ -46,3 +46,72 @@ int pointline(char *s)
 
 	return (start);
 }
+
+/**
+*
+*
+*
+*
+*/
+
+void _printerror(char *av, int i, char *line)
+{
+	char *message = ": ";
+	char *message2 = ": not found";
+	write(STDERR_FILENO, av, _strlen(av));
+	write(STDERR_FILENO, message, _strlen(message));
+	print_integer(i);
+	write(STDERR_FILENO, message, _strlen(message));
+	if (line != NULL)
+		line = strtok(line, _LIMITS_);
+	write(STDERR_FILENO, line, _strlen(line));
+	write(STDERR_FILENO, message2, _strlen(message2));
+	write(STDERR_FILENO, "\n", 1);
+
+}
+
+/**
+*
+*
+*
+*
+*/
+
+void print_integer(int i)
+{
+	int d, length;
+	unsigned int x;
+
+	d = 1;
+	length = 0;
+
+	x = i;
+
+
+	while (x / d > 9)
+		d = d * 10;
+	while (d != 0)
+	{
+		length = length + _putchar2('0' + x / d);
+		x = x % d;
+		d = d / 10;
+	}
+
+
+}
+
+/**
+*
+*
+*
+*
+*/
+
+
+int _putchar2(char c)
+{
+		return (write(2, &c, 1));
+}
+
+
+

@@ -12,10 +12,15 @@
 char **read_line(char *line)
 {
 	char *token;
-	char **tokens = malloc(_BUFF_SIZE_MAX_ * sizeof(char));
+	char **tokens;
 	int position = 0;
 
 	if (line == NULL)
+		return (NULL);
+
+	tokens = malloc(_BUFF_SIZE_MAX_ * sizeof(char));
+
+	if (tokens == NULL)
 		return (NULL);
 
 	token = strtok(line, _LIMITS_);
@@ -48,7 +53,7 @@ void execute_line(char **tokens, char *line)
 	{
 		if (execve(tokens[0], tokens, NULL) == -1)
 		{
-			perror("Error");
+			perror("");
 			free(line);
 			free(tokens);
 			exit(0);
