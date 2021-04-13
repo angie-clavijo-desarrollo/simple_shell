@@ -98,14 +98,20 @@ $ ./hsh
 ### Interactive mode ⚡️
 
 ```
-./hsh
+simple_shell:$ ./hsh
 $ /bin/ls
+$
+$
 ```
 
 ### Non - interactive mode 🧐
 
 ```
-echo echo "/bin/ls" | ./hsh
+simple_shell:$  echo "ls -l" | ./hsh 
+total 72
+-rw-rw-r-- 1 angui angui     0 Apr  9 15:28 AUTHORS
+-rw-rw-r-- 1 angui angui  4076 Apr 11 17:31 README.md
+-rw-rw-r-- 1 angui angui  1679 Apr 13 09:47 _path.c
 ```
 
 ### Output 🔍️
