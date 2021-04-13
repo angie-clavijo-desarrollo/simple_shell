@@ -23,7 +23,10 @@ int main(int ac, char **av)
 		linesize = getline(&line, &len, stdin);
 		i++;
 		if (linesize == -1)
+		{
+			free(line);
 			exit(98);
+		}
 		tokens = read_line(line);
 		if (tokens[0] != NULL)
 		{

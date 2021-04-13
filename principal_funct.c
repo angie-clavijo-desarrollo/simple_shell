@@ -53,7 +53,7 @@ void execute_line(char **tokens, char *line)
 	{
 		if (execve(tokens[0], tokens, NULL) == -1)
 		{
-			perror("");
+			perror(" ");
 			free(line);
 			free(tokens);
 			exit(0);
