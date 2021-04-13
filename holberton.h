@@ -16,7 +16,7 @@ extern char **environ;
 char **read_line(char *line);
 
 /*function that exexute line in the read_line*/
-void execute_line(char **tokens);
+void execute_line(char **tokens, char *line);
 
 /*function that link_together command and director*/
 char *_path(char *s);
@@ -51,6 +51,9 @@ int _putchar(char c);
 
 /**/
 int pointline(char *s);
+
+/**/
+void _printerror(char *s);
 
 
 #endif /**_HOLBERTON_H_*/

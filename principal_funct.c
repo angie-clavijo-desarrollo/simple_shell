@@ -37,22 +37,27 @@ char **read_line(char *line)
 * Return: void
 */
 
-void execute_line(char **tokens)
+void execute_line(char **tokens, char *line)
 {
 	pid_t pid = 0;
 
 	pid = fork();
 	if (pid == -1)
-		perror("Error");
+		perror("hsh");
 	if (pid == 0)
 	{
 		if (execve(tokens[0], tokens, NULL) == -1)
 		{
 			perror("Error");
+			free(line);
+			free(tokens);
 			exit(0);
 		}
 	}
 	else
+	{
 		wait(NULL);
+		kill(pid, SIGKILL);
+	}
 }
 

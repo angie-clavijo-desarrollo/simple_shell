@@ -6,13 +6,14 @@
 * Return: integer
 */
 
-int main(void)
+int main(int ac, char **av)
 {
 	ssize_t linesize = 0;
 	size_t len = 0;
 	char *line = NULL;
 	char **tokens = NULL;
 	int int_mode;
+	int i = 0;
 
 	int_mode = isatty(STDIN_FILENO);
 	while (1)
@@ -21,7 +22,7 @@ int main(void)
 			write(STDOUT_FILENO, "$ ", 3);
 		linesize = getline(&line, &len, stdin);
 		if (linesize == -1)
-			return (0);
+			exit(98);
 		tokens = read_line(line);
 		if (tokens[0] != NULL)
 		{
@@ -33,19 +34,22 @@ int main(void)
 			else if (_strcmp(tokens[0], "env") == 0)
 				printenv();
 			else if (access(tokens[0], F_OK) == 0 && pointline(tokens[0]) == 0)
-				execute_line(tokens);
+				execute_line(tokens, line);
 			else
 			{
-				tokens[0] = _path(tokens[0]);
-				execute_line(tokens);
+				tokens[0] = _path(tokens[0]);				
 				if (tokens[0] != NULL)
+				{
+					execute_line(tokens, line);
 					free(tokens[0]);
+				}
+				else if (ac == 1)
+					_printerror(av[1]);
 			}
 		}
-		if (!line)
-			free(line);
 		if (tokens != NULL)
 			free(tokens);
+		i++;
 	}
 	return (0);
 }
