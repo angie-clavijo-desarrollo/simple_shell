@@ -201,14 +201,18 @@ int access(const char *pathname, int mode);
 ### Authors 👷
 <br>
 
-Julieth Gonzalez
-<a href=https://github.com/jyuly12>jyuli12</a>
+Julieth Gonzalez /
+<a href=https://github.com/jyuly12>jyuli12</a> /
+<a href= https://twitter.com/jyuly12>@jyuly12</a>
 
-Carlos Polania
-<a href="https://github.com/capolaniaq">capolaniaq</a>
+Carlos Polania /
+<a href="https://github.com/capolaniaq">capolaniaq</a> /
+<a href= https://twitter.com/timberdev>@timberdev
+</a>
 
-Angui Clavijo
-<a href="https://github.com/angie-clavijo-desarrollo">angie-clavijo-desarrollo</a>
+Angui Clavijo /
+<a href="https://github.com/angie-clavijo-desarrollo">angie-clavijo-desarrollo</a> /
+<a href = https://twitter.com/anguiclavijods>@anguiclavijods</a>
 
 <br>
 <hr>
