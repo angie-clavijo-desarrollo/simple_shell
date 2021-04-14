@@ -8,6 +8,7 @@
 #include <sys/types.h>
 #include <string.h>
 #include <stdlib.h>
+#include <signal.h>
 #define _BUFF_SIZE_MAX_ 1064
 #define _LIMITS_ " \t\n"
 
