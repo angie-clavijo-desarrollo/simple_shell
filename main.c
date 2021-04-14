@@ -77,7 +77,7 @@ void builtexit(char *line, char **tokens)
 		free(line);
 	if (tokens != NULL)
 		free(tokens);
-	exit(0);
+	exit(98);
 }
 
 /**
