@@ -1,13 +1,24 @@
 #include "holberton.h"
 
 /**
+* sigintHandle - Does not terminate when Ctrl+C is pressed.
+* @number: parameter.
+*
+* Return: Nothing.
+*/
+void sigintHandle(int number __attribute__((unused)))
+{
+	signal(SIGINT, sigintHandle);
+	fflush(stdout);
+}
+
+/**
 * main - principal function of into
 * @ac: count of the parameters to inside
 * @av: parametres writes in the terminal
 *
 * Return: integer
 */
-
 int main(int ac, char **av)
 {
 	ssize_t linesize = 0;
@@ -15,6 +26,7 @@ int main(int ac, char **av)
 	char *line = NULL, **tokens = NULL;
 	int int_mode, i = 0;
 
+	signal(SIGINT, sigintHandle);
 	int_mode = isatty(STDIN_FILENO);
 	while (1)
 	{
@@ -81,5 +93,3 @@ void exit2(char *line)
 		free(line);
 	exit(0);
 }
-
-
