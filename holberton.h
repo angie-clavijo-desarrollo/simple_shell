@@ -65,6 +65,13 @@ void print_integer(int i);
 /**/
 int _putchar2(char c);
 
+/***/
+void builtexit(char *line, char **tokens);
+
+
+/***/
+void exit2(char *line);
+
 
 #endif /**_HOLBERTON_H_*/
 
