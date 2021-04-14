@@ -9,6 +9,7 @@
 void sigintHandle(int number __attribute__((unused)))
 {
 	signal(SIGINT, sigintHandle);
+	write(STDOUT_FILENO, "\n", 3);
 	fflush(stdout);
 }
 
