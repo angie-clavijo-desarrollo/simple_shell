@@ -1,4 +1,3 @@
-
 #ifndef _HOLBERTON_H_
 #define _HOLBERTON_H_
 
@@ -9,13 +8,12 @@
 #include <string.h>
 #include <stdlib.h>
 #include <signal.h>
+
 #define _BUFF_SIZE_MAX_ 1064
 #define _LIMITS_ " \t\n"
 
-
 /*var exten with double point to enviroment*/
 extern char **environ;
-
 
 /* function that read the line to add for getline*/
 char **read_line(char *line);
@@ -71,6 +69,4 @@ void builtexit(char *line, char **tokens);
 /*function that exit of program*/
 void exit2(char *line);
 
-
 #endif /**_HOLBERTON_H_*/
-
