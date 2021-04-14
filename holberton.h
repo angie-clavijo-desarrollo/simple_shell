@@ -47,7 +47,6 @@ int _strcmp(char *s1, char *s2);
 /*function that copy the string pointed*/
 char *_strcpy(char *dest, char *src);
 
-
 /*function that print enviroment*/
 void printenv(void);
 
@@ -68,7 +67,6 @@ int _putchar2(char c);
 
 /*function that compare the parameters of entry*/
 void builtexit(char *line, char **tokens);
-
 
 /*function that exit of program*/
 void exit2(char *line);

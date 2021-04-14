@@ -1,4 +1,5 @@
 #include "holberton.h"
+
 /**
 * _putchar - function that print of the one caracter each time
 * @c: the character to print
