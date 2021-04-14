@@ -1,8 +1,6 @@
 #include "holberton.h"
-
 /**
 * printenv - function that print the var environ
-*
 * Return: void
 */
 
@@ -20,23 +18,10 @@ void printenv(void)
 }
 
 /**
-* _putchar - function that print of the one caracter each time
-* @c: the character to print
-* Return: 1 in success
-*/
-
-int _putchar(char c)
-{
-		return (write(1, &c, 1));
-}
-
-/**
 * pointline - Function that rectify if at the begin of the string is . or
 * @s: string to verify
-*
 * Return: 0 incase success or -1 in case failure
 */
-
 int pointline(char *s)
 {
 	int start = -1;
@@ -48,16 +33,16 @@ int pointline(char *s)
 }
 
 /**
-*
-*
-*
-*
+* _printerror - Function that check if is a error and print message error
+* @av: argument to verify
+* @i: iterator to verify the length
+* @line: argument of line
+* Return: 0 incase success or -1 in case failure
 */
-
 void _printerror(char *av, int i, char *line)
 {
 	char *message = ": ";
-//	char *message2 = ": not found";
+/*	char *message2 = ": not found";*/
 	write(STDERR_FILENO, av, _strlen(av));
 	write(STDERR_FILENO, message, _strlen(message));
 	print_integer(i);
@@ -66,18 +51,15 @@ void _printerror(char *av, int i, char *line)
 		line = strtok(line, _LIMITS_);
 	write(STDERR_FILENO, line, _strlen(line));
 	perror(" ");
-//	write(STDERR_FILENO, message2, _strlen(message2));
-////	write(STDERR_FILENO, "\n", 1);
-
+/*	write(STDERR_FILENO, message2, _strlen(message2));*/
+/*	write(STDERR_FILENO, "\n", 1);*/
 }
 
 /**
-*
-*
-*
-*
+* print_integer - Function that verify of length of integer for print
+* @i: argument of iterator
+* Return: 0 incase success or -1 in case failure
 */
-
 void print_integer(int i)
 {
 	int d, length;
@@ -97,22 +79,4 @@ void print_integer(int i)
 		x = x % d;
 		d = d / 10;
 	}
-
-
 }
-
-/**
-*
-*
-*
-*
-*/
-
-
-int _putchar2(char c)
-{
-		return (write(2, &c, 1));
-}
-
-
-
