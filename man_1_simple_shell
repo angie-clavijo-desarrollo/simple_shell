@@ -2,8 +2,7 @@
 .hy
 .SH PROLOG
 .PP
-This manual page is part of a collaborative project, where the operation of a
-shell is evaluated in order to replicate it.
+This manual page is part of a collaborative project, where the operation of a shell is evaluated in order to replicate it. 
 .PP
 .SH NAME
 .PP
@@ -20,11 +19,12 @@ The simple_shell or ./hsh is a program that interprets the commands given by the
 .PP
 .SH EXAMPLE
 .PP
-To run the program you have to compile all the .c files contained in the
-repository with the following command:
+To run the program you have to compile all the .c files contained in the repository with the following command:
 .PP
 .ft BI
 $ gcc -Wall -Werror -Wextra -pedantic *.c -o hsh
+.PP
+The program has two ways of using it, being the interactive or non-interactive mode, an example of output for both modes will be presented.
 .PP
 In interactive mode:
 .PP
@@ -47,6 +47,18 @@ $ echo "pwd" | ./hsh
 .PP
 .ft BI
 /home/simple_shell/
+.PP
+.B ERROR EXAMPLE
+.PP
+.ft BI
+$ echo "qwerty" | ./hsh
+.PP
+.B ./hsh: 1: qwerty: not found
+.PP
+.ft BI
+$ echo "qwerty" | ./././hsh
+.PP
+.B ./././hsh: 1: qwerty: not found
 .PP
 .SH COMMANDS
 .PP
