@@ -42,7 +42,7 @@ int pointline(char *s)
 void _printerror(char *av, int i, char *line)
 {
 	char *message = ": ";
-	char *message2 = ": not found";
+/*	char *message2 = ": not found";*/
 	write(STDERR_FILENO, av, _strlen(av));
 	write(STDERR_FILENO, message, _strlen(message));
 	print_integer(i);
@@ -50,9 +50,9 @@ void _printerror(char *av, int i, char *line)
 	if (line != NULL)
 		line = strtok(line, _LIMITS_);
 	write(STDERR_FILENO, line, _strlen(line));
-//	perror(" ");
-	write(STDERR_FILENO, message2, _strlen(message2));
-	write(STDERR_FILENO, "\n", 1);
+	perror(" ");
+/*	write(STDERR_FILENO, message2, _strlen(message2));*/
+/*	write(STDERR_FILENO, "\n", 1);*/
 }
 
 /**
