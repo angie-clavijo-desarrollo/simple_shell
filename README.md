@@ -24,8 +24,7 @@ Thompson with Dennis Ritchie.
 
 ### Description ✒️
 
-This repository show how creating the Shell.
-
+This repository show how creating the Shell.  <a href =  https://www.linkedin.com/pulse/shell-what-happens-ls-l-c-angui-clavijo-gutierrez>This blog explain most detail about shell.🤓 </a>
 
 
 <div align="center">
