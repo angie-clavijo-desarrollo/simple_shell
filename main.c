@@ -8,8 +8,9 @@
 */
 void sigintHandle(int number __attribute__((unused)))
 {
+/*CTRL + C generated a SIGINT signal*/
 	signal(SIGINT, sigintHandle);
-	write(STDOUT_FILENO, "\n", 3);
+	write(STDOUT_FILENO, "\n ", 3);
 	fflush(stdout);
 }
 
@@ -27,8 +28,8 @@ int main(int ac, char **av)
 	char *line = NULL, **tokens = NULL;
 	int int_mode, i = 0;
 
-	signal(SIGINT, sigintHandle);
 	int_mode = isatty(STDIN_FILENO);
+	signal(SIGINT, sigintHandle);
 	while (1)
 	{
 		if (int_mode == 1)
@@ -44,7 +45,8 @@ int main(int ac, char **av)
 				builtexit(line, tokens);
 			else if (_strcmp(tokens[0], "env") == 0)
 				printenv();
-			else if (access(tokens[0], F_OK) == 0 && pointline(tokens[0]) == 0)
+			else if (access(tokens[0], F_OK) == 0 &&
+				 pointline(tokens[0]) == 0)
 				execute_line(tokens, line);
 			else
 			{
