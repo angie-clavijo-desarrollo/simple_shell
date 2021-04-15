@@ -69,4 +69,4 @@ void builtexit(char *line, char **tokens);
 /*function that exit of program*/
 void exit2(char *line);
 
-#endif /**_HOLBERTON_H_*/
+#endif
