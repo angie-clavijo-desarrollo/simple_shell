@@ -26,6 +26,13 @@ Thompson with Dennis Ritchie.
 
 This repository show how creating the Shell.
 
+
+
+<div align="center">
+
+![Diagram of shell.](https://raw.githubusercontent.com/angie-clavijo-desarrollo/simple_shell/master/shell.jpg)
+
+</div>
 <hr>
 
 
